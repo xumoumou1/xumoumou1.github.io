@@ -56,6 +56,56 @@
             });
         }
 
+
+
+        function handleCredentialResponse(response) {
+            //var idToken = response.getAuthResponse().id_token;
+            console.log("ID: " + "aaaaaaaaaaaaaaaaaaaaaaaaa");
+            console.log("ID: " + response.credential);
+            const responsePayload = decodeJWT(response.credential);
+            console.log('头部:', responsePayload.header);
+            console.log('负载:', responsePayload.payload);
+            document.getElementById("text").innerText = 'Google登录:' + responsePayload.payload.name;
+            //        console.log("ID: " + responsePayload.sub);
+            //        console.log('Full Name: ' + responsePayload.name);
+            //        console.log('Given Name: ' + responsePayload.given_name);
+            //        console.log('Family Name: ' + responsePayload.family_name);
+            //        console.log("Image URL: " + responsePayload.picture);
+            //        console.log("Email: " + responsePayload.email);
+        }
+
+        function google_init() {
+            google.accounts.id.initialize({
+                client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
+                callback: handleCredentialResponse
+            });
+            google.accounts.id.prompt();
+            //        google.accounts.id.disableAutoSelect();
+
+            //        google.accounts.id.renderButton(
+            //                document.getElementById("buttonDiv"),
+            //                { theme: 'outline', size: 'large' }
+            //        );
+        }
+
+        function decodeJWT(jwt) {
+            // 将 JWT 的有效载荷部分分割为头部、负载和签名
+            var parts = jwt.split('.');
+            var header = parts[0];
+            var payload = parts[1];
+            var signature = parts[2];
+
+            // 解码头部和负载
+            var decodedHeader = JSON.parse(atob(header));
+            var decodedPayload = JSON.parse(atob(payload));
+
+            // 返回解码后的头部和负载
+            return {
+                header: decodedHeader,
+                payload: decodedPayload
+            };
+        }
+
     </script>
 
 
@@ -65,6 +115,11 @@
     </fb:login-button>
 
     <div id="status">
+    </div>
+
+    <div>
+        <button type="button" onclick="google_init()">google 一键登录</button>
+
     </div>
 
 
