@@ -8,8 +8,18 @@
 
 <body>
     <!-- Load the JS SDK asynchronously -->
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-    <script src="https://accounts.google.com/gsi/client" async></script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js">
+    (function () {
+      window.facebookSdkLoad = true;
+       console.log("facebookSdkLoad load success");
+    })
+  </script>
+  <script src="https://accounts.google.com/gsi/client" async>
+      (function () {
+        window.googleSdkLoad = true;
+        console.log("googleSdkLoad load success");
+      })
+  </script>
     <script>
 
         function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
