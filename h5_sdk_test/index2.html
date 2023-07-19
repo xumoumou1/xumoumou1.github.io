@@ -65,7 +65,7 @@
             const responsePayload = decodeJWT(response.credential);
             console.log('头部:', responsePayload.header);
             console.log('负载:', responsePayload.payload);
-            document.getElementById("text").innerText = 'Google登录:' + responsePayload.payload.name;
+            // document.getElementById("text").innerText = 'Google登录:' + responsePayload.payload.name;
             //        console.log("ID: " + responsePayload.sub);
             //        console.log('Full Name: ' + responsePayload.name);
             //        console.log('Given Name: ' + responsePayload.given_name);
