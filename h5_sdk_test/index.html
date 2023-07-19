@@ -39,7 +39,16 @@
 
   <link rel="stylesheet" type="text/css" href="style-mobile.css"/>
   <link rel="icon" href="favicon.ico"/>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+ <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js">
+    (function () {
+      window.facebookSdkLoad = true;
+    })
+  </script>
+  <script src="https://accounts.google.com/gsi/client" async>
+      (function () {
+        window.googleSdkLoad = true;
+      })
+  </script>
 </head>
 <body>
   <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
