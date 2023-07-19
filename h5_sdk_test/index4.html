@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Google One Tap Demo</title>
-   <script src="https://accounts.google.com/gsi/client" async></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
   <h1>Google One Tap Demo</h1>
@@ -11,7 +11,7 @@
   <div id="g_id_onload" data-client_id="550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com" data-callback="handleCredentialResponse"></div>
 
   <button id="google-login-button">Google登录</button>
-  <button id="google-init-button">Google 初始化</button>
+  <button id="google-init-button">Google登录</button>
 
   <script>
     function handleCredentialResponse(response) {
@@ -22,17 +22,20 @@
 
     var googleLoginButton = document.getElementById('google-login-button');
     googleLoginButton.addEventListener('click', function() {
-        google.accounts.id.initialize({
-            client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
-            callback: handleOneTapInitialized
-        });
+      google.accounts.id.prompt((notification) => {
+        if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+          // 当用户未登录 Google 账号时，手动触发登录弹窗
+          google.accounts.id.prompt();
+        }
+      });
     });
 
-     var googleInitButton = document.getElementById('google-init-button');
+    var googleInitButton = document.getElementById('google-init-button');
     googleInitButton.addEventListener('click', function() {
-      google.accounts.id.prompt();
+       google.accounts.id.initialize({
+      client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
+      callback: handleOneTapInitialized
     });
-
   
 
     function handleOneTapInitialized() {
