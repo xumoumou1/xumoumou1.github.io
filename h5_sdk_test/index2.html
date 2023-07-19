@@ -10,6 +10,14 @@
     <!-- Load the JS SDK asynchronously -->
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
   <script src="https://accounts.google.com/gsi/client" async></script>
+    <div id="g_id_onload"
+         data-client_id="550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false">
+    </div>
+    
     <script>
         function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
             console.log('statusChangeCallback');
@@ -134,13 +142,7 @@
         <button type="button" onclick="g_login()">google 调界面</button>
     </div>
 
-    <div id="g_id_onload"
-         data-client_id="550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com"
-         data-context="signin"
-         data-ux_mode="popup"
-         data-callback="handleCredentialResponse"
-         data-auto_prompt="false">
-    </div>
+
     
 <!--     <div class="g_id_signin"
          data-type="standard"
