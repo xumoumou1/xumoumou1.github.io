@@ -21,13 +21,18 @@
 
     var googleLoginButton = document.getElementById('google-login-button');
     googleLoginButton.addEventListener('click', function() {
+        google.accounts.id.initialize({
+            client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
+            callback: handleOneTapInitialized
+        });
+    });
+
+     var googleInitButton = document.getElementById('google-init-button');
+    googleLoginButton.addEventListener('click', function() {
       google.accounts.id.prompt();
     });
 
-    google.accounts.id.initialize({
-      client_id: 'YOUR_CLIENT_ID',
-      callback: handleOneTapInitialized
-    });
+  
 
     function handleOneTapInitialized() {
       console.log('容器元素已初始化');
