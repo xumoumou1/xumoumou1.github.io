@@ -79,7 +79,9 @@
                 client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
                 callback: handleCredentialResponse
             });
-            google.accounts.id.prompt();
+
+            console.log("google 初始化成功");
+            // google.accounts.id.prompt();
             //        google.accounts.id.disableAutoSelect();
 
             //        google.accounts.id.renderButton(
@@ -87,6 +89,16 @@
             //                { theme: 'outline', size: 'large' }
             //        );
         }
+
+        function g_login() {
+            console.log("调用页面");
+            google.accounts.id.prompt();
+        }
+
+        window.onload = function () {
+            g_login();
+        }
+
 
         function decodeJWT(jwt) {
             // 将 JWT 的有效载荷部分分割为头部、负载和签名
@@ -119,10 +131,10 @@
 
     <div>
         <button type="button" onclick="google_init()">google 一键登录</button>
-
+        <button type="button" onclick="g_login()">google 调界面</button>
     </div>
 
-    <div id="g_id_onload"
+<!--     <div id="g_id_onload"
       data-client_id="550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com"
       data-context="signin"
       data-ux_mode="popup"
@@ -142,7 +154,7 @@
     <div id="g_id_onload"
       data-client_id="550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com"
       data-callback="handleCredentialResponse">
-    </div>
+    </div> -->
 
 </body>
 
