@@ -100,7 +100,12 @@
 
         function g_login() {
             console.log("调用页面");
-            google.accounts.id.prompt();
+            google.accounts.id.prompt((notification) => {
+            if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+                  // 当用户未登录 Google 账号时，手动触发登录弹窗
+                  google.accounts.id.prompt();
+                }
+              });
         }
 
         window.onload = function () {
