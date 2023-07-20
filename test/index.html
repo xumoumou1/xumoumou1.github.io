@@ -43,8 +43,6 @@
 </head>
 
 <body>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-  <script src="https://accounts.google.com/gsi/client" async></script>
   <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
   <div id="splash">
     <div class="progress-bar stripes">
@@ -52,9 +50,11 @@
     </div>
   </div>
 
-  <script src="src/settings.51399.js" charset="utf-8"></script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async></script>
+  <script src="src/settings.835ca.js" charset="utf-8"></script>
 
-  <script src="main.89c0c.js" charset="utf-8"></script>
+  <script src="main.d3627.js" charset="utf-8"></script>
 
   <script type="text/javascript">
     (function () {
@@ -66,8 +66,6 @@
       var debug = window._CCSettings.debug;
       var splash = document.getElementById('splash');
       splash.style.display = 'block';
-
-
 
       function loadScript(moduleName, cb) {
         function scriptLoaded() {
@@ -82,7 +80,7 @@
         document.body.appendChild(domScript);
       }
 
-      loadScript(debug ? 'cocos2d-js.36e02.js' : 'cocos2d-js-min.js', function () {
+      loadScript(debug ? 'cocos2d-js.15a27.js' : 'cocos2d-js-min.js', function () {
         if (CC_PHYSICS_BUILTIN || CC_PHYSICS_CANNON) {
           loadScript(debug ? 'physics.js' : 'physics-min.js', window.boot);
         }
@@ -92,17 +90,6 @@
       });
     })();
   </script>
-
-  <script>
-    FB.init({
-      appId: '940773713487256',
-      autoLogAppEvents: true,
-      xfbml: true,
-      version: 'v17.0'
-    });
-  </script>
-
-
 </body>
 
 </html>
