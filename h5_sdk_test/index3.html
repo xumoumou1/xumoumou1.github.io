@@ -2,156 +2,51 @@
 <html>
 
 <head>
-    <title>Facebook Login JavaScript Example</title>
     <meta charset="UTF-8">
+    <title>Google One Tap Demo</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 
 <body>
-    <!-- Load the JS SDK asynchronously -->
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-  <script src="https://accounts.google.com/gsi/client" async></script>
+    <h1>Google One Tap Demo</h1>
+
+    <div id="g_id_onload" data-client_id="550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse"></div>
+
+    <button id="google-login-button">Google登录</button>
+    <button id="google-init-button">Google登录</button>
+
     <script>
-        function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
-            console.log('statusChangeCallback');
-            console.log(response);                   // The current login status of the person.
-            if (response.status === 'connected') {   // Logged into your webpage and Facebook.
-                testAPI();
-            } else {                                 // Not logged into your webpage or we are unable to tell.
-                document.getElementById('status').innerHTML = 'Please log ' +
-                    'into this webpage.';
-            }
-        }
-
-
-        function checkLoginState() {               // Called when a person is finished with the Login Button.
-            // FB.getLoginStatus(function (response) {   // See the onlogin handler
-            //     statusChangeCallback(response);
-            // });
-            FB.login(function (response) {   // See the onlogin handler
-                statusChangeCallback(response);
-            });
-        }
-
-
-        window.fbAsyncInit = function () {
-            FB.init({
-                appId: '940773713487256',
-                cookie: true,                     // Enable cookies to allow the server to access the session.
-                xfbml: true,                     // Parse social plugins on this webpage.
-                version: 'v17.0'           // Use this Graph API version for this call.
-            });
-
-
-            FB.getLoginStatus(function (response) {   // Called after the JS SDK has been initialized.
-                statusChangeCallback(response);        // Returns the login status.
-            });
-        };
-
-        function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-            console.log('Welcome!  Fetching your information.... ');
-            FB.api('/me', function (response) {
-                console.log('Successful login for: ' + response.name);
-                document.getElementById('status').innerHTML =
-                    'Thanks for logging in, ' + response.name + '!';
-            });
-        }
-
-
-
         function handleCredentialResponse(response) {
-            //var idToken = response.getAuthResponse().id_token;
-            console.log("ID: " + "aaaaaaaaaaaaaaaaaaaaaaaaa");
-            console.log("ID: " + response.credential);
-            const responsePayload = decodeJWT(response.credential);
-            console.log('头部:', responsePayload.header);
-            console.log('负载:', responsePayload.payload);
-            // document.getElementById("text").innerText = 'Google登录:' + responsePayload.payload.name;
-            //        console.log("ID: " + responsePayload.sub);
-            //        console.log('Full Name: ' + responsePayload.name);
-            //        console.log('Given Name: ' + responsePayload.given_name);
-            //        console.log('Family Name: ' + responsePayload.family_name);
-            //        console.log("Image URL: " + responsePayload.picture);
-            //        console.log("Email: " + responsePayload.email);
+            const credential = response.credential;
+            console.log(credential);
+            // 这里可以将凭证发送到服务器进行验证等进一步的操作
         }
 
-        function google_init() {
+        var googleLoginButton = document.getElementById('google-login-button');
+        googleLoginButton.addEventListener('click', function () {
+            google.accounts.id.prompt((notification) => {
+                if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+                    // 当用户未登录 Google 账号时，手动触发登录弹窗
+                    google.accounts.id.prompt();
+                }
+            });
+        });
+
+        var googleInitButton = document.getElementById('google-init-button');
+        googleInitButton.addEventListener('click', function () {
             google.accounts.id.initialize({
                 client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
-                callback: handleCredentialResponse
+                callback: handleOneTapInitialized
             });
+        });
 
-            console.log("google 初始化成功");
-            // google.accounts.id.prompt();
-            //        google.accounts.id.disableAutoSelect();
 
-            //        google.accounts.id.renderButton(
-            //                document.getElementById("buttonDiv"),
-            //                { theme: 'outline', size: 'large' }
-            //        );
+        function handleOneTapInitialized() {
+            console.log('容器元素已初始化');
+            // 在这里可以执行其他的操作
         }
-
-        function g_login() {
-            console.log("调用页面");
-            google.accounts.id.prompt();
-        }
-
-        window.onload = function () {
-            // g_login();
-        }
-
-
-        function decodeJWT(jwt) {
-            // 将 JWT 的有效载荷部分分割为头部、负载和签名
-            var parts = jwt.split('.');
-            var header = parts[0];
-            var payload = parts[1];
-            var signature = parts[2];
-
-            // 解码头部和负载
-            var decodedHeader = JSON.parse(atob(header));
-            var decodedPayload = JSON.parse(atob(payload));
-
-            // 返回解码后的头部和负载
-            return {
-                header: decodedHeader,
-                payload: decodedPayload
-            };
-        }
-
     </script>
-
-
-    <!-- The JS SDK Login Button -->
-
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-    </fb:login-button>
-
-    <div id="status">
-    </div>
-
-    <div>
-        <button type="button" onclick="google_init()">google 一键登录</button>
-        <button type="button" onclick="g_login()">google 调界面</button>
-    </div>
-
-    <div id="g_id_onload"
-         data-client_id="550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com"
-         data-context="signin"
-         data-ux_mode="popup"
-         data-login_uri="https://xumoumou1.github.io/h5_sdk_test/index2.html"
-         data-nonce=""
-         data-auto_prompt="false">
-    </div>
-    
-    <div class="g_id_signin"
-         data-type="standard"
-         data-shape="rectangular"
-         data-theme="outline"
-         data-text="signin_with"
-         data-size="large"
-         data-logo_alignment="left">
-    </div>
-
 </body>
 
 </html>
