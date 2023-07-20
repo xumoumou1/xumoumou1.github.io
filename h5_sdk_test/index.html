@@ -8,25 +8,25 @@
     <script>
 
       function signIn() {
-        gapi.load('auth2', function() {
-            gapi.auth2.init({
-                client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com'
-            }).then(function(auth2) {
-                auth2.signIn().then(function(response) {
-                    // 用户登录成功
-                    var profile = response.getBasicProfile();
-                    console.log('登录成功！');
-                    console.log('ID: ' + profile.getId());
-                    console.log('名称: ' + profile.getName());
-                    console.log('图片 URL: ' + profile.getImageUrl());
-                    console.log('邮箱: ' + profile.getEmail());
-                }, function(error) {
-                    // 登录失败
-                    console.log('登录失败，请检查错误信息：' + error);
-                });
-            });
+        google.accounts.id.prompt({
+            client_id: 'YOUR_CLIENT_ID',
+            scope: 'profile email',
+            callback: handleSignIn
         });
-    }
+      }  
+
+      function handleSignIn(response) {
+          if (response.error) {
+              console.error('登录失败，请检查错误信息：' + response.error);
+          } else {
+              var profile = response.profile;
+              console.log('登录成功！');
+              console.log('ID: ' + profile.id);
+              console.log('名称: ' + profile.name);
+              console.log('邮箱: ' + profile.email);
+              console.log('头像 URL: ' + profile.picture);
+          }
+      }
 
     </script>
 
