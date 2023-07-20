@@ -4,30 +4,61 @@
   </head>
   
   <body>
- <script src="https://accounts.google.com/gsi/client" async defer></script>
+<!--  <script src="https://accounts.google.com/gsi/client" async defer></script> -->
     <script>
-     function signIn() {
-        google.accounts.id.initialize({
-            client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
-            callback: handleSignIn
-        });
-        google.accounts.id.prompt();
-      }
+     // function signIn() {
+     //    google.accounts.id.initialize({
+     //        client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
+     //        callback: handleSignIn
+     //    });
+     //    google.accounts.id.prompt();
+     //  }
       
-      function handleSignIn(response) {
-          if (response.error) {
-              console.error('登录失败，请检查错误信息：' + response.error);
-          } else {
-              var profile = response.profile;
-              console.log('登录成功！');
-              console.log('ID: ' + profile.id);
-              console.log('名称: ' + profile.name);
-              console.log('邮箱: ' + profile.email);
-              console.log('头像 URL: ' + profile.picture);
-          }
-      }
+     // 创建一个 Promise 来等待 SDK 加载完毕
+function waitForGsiSdk() {
+  return new Promise(function(resolve, reject) {
+    window.addEventListener('google-post-gss-load', function() {
+      resolve();
+    });
+  });
+}
 
-signIn();
+    // 等待 SDK 加载完毕后执行登录
+    waitForGsiSdk().then(function() {
+      signIn();
+    });
+    
+    // 登录函数
+    function signIn() {
+      google.accounts.id.initialize({
+        client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
+        callback: handleSignIn
+      });
+      google.accounts.id.prompt();
+    }
+    
+    // 处理登录结果的回调函数
+    function handleSignIn(response) {
+      if (response.error) {
+        console.error('登录失败，请检查错误信息：' + response.error);
+      } else {
+        var profile = response.profile;
+        console.log('登录成功！');
+        console.log('ID: ' + profile.id);
+        console.log('名称: ' + profile.name);
+        console.log('邮箱: ' + profile.email);
+        console.log('头像 URL: ' + profile.picture);
+      }
+    }
+    
+    // 触发 SDK 加载
+    (function() {
+      var script = document.createElement('script');
+      script.src = 'https://accounts.google.com/gsi/client';
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+})();
 
     </script>
 
