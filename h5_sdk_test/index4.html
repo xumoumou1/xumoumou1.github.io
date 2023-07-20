@@ -16,13 +16,14 @@
 
        var client;
       function googleInit2({
-        client = google.accounts.oauth2.initCodeClient(!
-        client id: '550948425386-0dm4gski8f5evdgvts3klgpp54n07h5s.apps googleusercontent,com'
-        scope: "https://www.googleapis,com/auth/userinfo.profile'
-        ux mode: popup',
-        redirect uri: "https://xuououl.github.io,
-        callback: handleCredentialResponse
-        state: "clm"
+        client = google.accounts.oauth2.initCodeClient({
+          client id: '550948425386-0dm4gski8f5evdgvts3klgpp54n07h5s.apps googleusercontent,com'
+          scope: "https://www.googleapis,com/auth/userinfo.profile'
+          ux mode: popup',
+          redirect uri: "https://xuououl.github.io,
+          callback: handleCredentialResponse
+          state: "clm"
+        });
       }
     }
     </script>
