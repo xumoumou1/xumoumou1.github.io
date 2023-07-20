@@ -25,12 +25,28 @@
 
         var googleLoginButton = document.getElementById('google-login-button');
         googleLoginButton.addEventListener('click', function () {
-            google.accounts.id.prompt((notification) => {
-                if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-                    // 当用户未登录 Google 账号时，手动触发登录弹窗
-                    google.accounts.id.prompt();
-                }
-            });
+           var hintConfig = {
+            'supportedAuthMethods': [
+              'https://accounts.google.com',
+              'googleyolo://id-and-password'
+            ],
+            'supportedIdTokenProviders': [
+              {
+                'uri': 'https://accounts.google.com',
+                'clientId': '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com'
+              }
+            ],
+            'context': 'signin',
+            'clientCallbackUrl': 'https://example.com'
+          };
+    
+          google.accounts.id.prompt(pendingConfig => {
+            if (pendingConfig) {
+              google.accounts.id.prompt(pendingConfig);
+            } else {
+              google.accounts.id.prompt(hintConfig);
+            }
+          });
         });
 
         var googleInitButton = document.getElementById('google-init-button');
