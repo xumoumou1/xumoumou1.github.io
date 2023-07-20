@@ -1,0 +1,62 @@
+{
+    "paths": {},
+    "uuids": [
+        "29FYIk+N1GYaeWH/q1NxQO",
+        "71VhFCTINJM6/Ky3oX9nBT",
+        "91Vez0IWRLNYk4y0ny2Ibb",
+        "a1PuhaAHlN5rdTQEeh/h4r",
+        "b4P/PCArtIdIH38t6mlw8Y",
+        "e8Ueib+qJEhL6mXAHdnwbi",
+        "e97GVMl6JHh5Ml5qEDdSGa",
+        "ecpdLyjvZBwrvm+cedCcQy",
+        "f0BIwQ8D5Ml7nTNQbh1YlS"
+    ],
+    "scenes": {
+        "db://assets/scene/Hall.fire": "a1PuhaAHlN5rdTQEeh/h4r",
+        "db://assets/scene/Login.fire": "91Vez0IWRLNYk4y0ny2Ibb"
+    },
+    "redirect": [
+        "ecpdLyjvZBwrvm+cedCcQy",
+        0
+    ],
+    "deps": [
+        "internal"
+    ],
+    "packs": {
+        "09b7df110": [
+            "71VhFCTINJM6/Ky3oX9nBT",
+            "b4P/PCArtIdIH38t6mlw8Y",
+            "e8Ueib+qJEhL6mXAHdnwbi"
+        ],
+        "0cbab1274": [
+            "29FYIk+N1GYaeWH/q1NxQO",
+            "91Vez0IWRLNYk4y0ny2Ibb",
+            "e97GVMl6JHh5Ml5qEDdSGa",
+            "f0BIwQ8D5Ml7nTNQbh1YlS"
+        ]
+    },
+    "name": "main",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": true,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            "09b7df110",
+            "01145",
+            "0cbab1274",
+            "7337a",
+            "a1PuhaAHlN5rdTQEeh/h4r",
+            "90ef4"
+        ],
+        "native": [
+            "71VhFCTINJM6/Ky3oX9nBT",
+            "c06a9",
+            "b4P/PCArtIdIH38t6mlw8Y",
+            "83fcc",
+            "e8Ueib+qJEhL6mXAHdnwbi",
+            "90cf4"
+        ]
+    }
+}
