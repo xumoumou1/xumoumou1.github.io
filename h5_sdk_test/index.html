@@ -6,15 +6,14 @@
   <body>
  <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
-
-      function signIn() {
-        google.accounts.id.prompt({
+     function signIn() {
+        google.accounts.id.initialize({
             client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
-            scope: 'profile email',
             callback: handleSignIn
         });
-      }  
-
+        google.accounts.id.prompt();
+      }
+      
       function handleSignIn(response) {
           if (response.error) {
               console.error('登录失败，请检查错误信息：' + response.error);
@@ -27,6 +26,8 @@
               console.log('头像 URL: ' + profile.picture);
           }
       }
+
+signIn();
 
     </script>
 
