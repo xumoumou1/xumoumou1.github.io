@@ -1,68 +1,30 @@
-<!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Google One Tap Demo</title>
+  <body>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-</head>
-
-<body>
-    <h1>Google One Tap Demo</h1>
-
-    <div id="g_id_onload" data-client_id="550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com"
-        data-callback="handleCredentialResponse"></div>
-
-    <button id="google-login-button">Google登录</button>
-    <button id="google-init-button">Google 初始化</button>
-
     <script>
-        function handleCredentialResponse(response) {
-            const credential = response.credential;
-            console.log(credential);
-            // 这里可以将凭证发送到服务器进行验证等进一步的操作
-        }
-
-        var googleLoginButton = document.getElementById('google-login-button');
-        googleLoginButton.addEventListener('click', function () {
-           var hintConfig = {
-            'supportedAuthMethods': [
-              'https://accounts.google.com',
-              'googleyolo://id-and-password'
-            ],
-            'supportedIdTokenProviders': [
-              {
-                'uri': 'https://accounts.google.com',
-                'clientId': '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com'
-              }
-            ],
-            'context': 'signin',
-            'clientCallbackUrl': 'https://example.com'
-          };
+    function handleCredentialResponse() {
+      console.log('hello, world');
+    }
+    window.onload = function () {
     
-          google.accounts.id.prompt(pendingConfig => {
-            if (pendingConfig) {
-              google.accounts.id.prompt(pendingConfig);
-            } else {
-              google.accounts.id.prompt(hintConfig);
-            }
-          });
-        });
-
-        var googleInitButton = document.getElementById('google-init-button');
-        googleInitButton.addEventListener('click', function () {
-            google.accounts.id.initialize({
-                client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
-                callback: handleOneTapInitialized
-            });
-        });
-
-
-        function handleOneTapInitialized() {
-            console.log('容器元素已初始化');
-            // 在这里可以执行其他的操作
-        }
+      google.accounts.id.initialize({
+        client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
+        callback: handleCredentialResponse
+      });
+      
+      // Display the One Tap prompt
+      google.accounts.id.prompt();
+      
+      // Display the Sign In With Google Button
+      google.accounts.id.renderButton(
+        document.getElementById("buttonDiv"),
+        { theme: 'outline', size: 'large' }
+      );
+    }
     </script>
-</body>
 
+
+    <pre>One Tap renders a popup, button requires a div to position it on the page</pre>
+    <div id='buttonDiv'></div>
+  </body>
 </html>
