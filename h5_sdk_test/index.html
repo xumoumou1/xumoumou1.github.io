@@ -22,20 +22,18 @@
         }
 
         function handleSignIn() {
-            google.accounts.id.prompt().then(response => {
-                if (response.credential) {
-                    var credential = response.credential;
-                    var idToken = credential.id_token;
-                    
-                    // 发送 idToken 给后端进行验证和授权登录操作
-                    // ...
-                    
-                    console.log('授权登录成功！');
-                    console.log('ID Token: ' + idToken);
-                } else {
-                    console.error('授权登录失败，请重试！');
-                }
-            });
+            if (google.accounts.id.isSignedIn()) {
+                var credential = google.accounts.id.getCredential();
+                var idToken = credential.id_token;
+                
+                // 发送 idToken 给后端进行验证和授权登录操作
+                // ...
+                
+                console.log('授权登录成功！');
+                console.log('ID Token: ' + idToken);
+            } else {
+                console.error('授权登录失败，请重试！');
+            }
         }
     </script>
 </head>
