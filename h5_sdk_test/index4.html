@@ -19,7 +19,7 @@
         function facebookLogin() {
 
             if (!isFBSuc) {
-                document.getElementById("text").innerText = "facebook 没有初始化";
+                console.log("facebook 没有初始化");
                 return;
             }
 
@@ -32,7 +32,7 @@
                 if (response.authResponse) {
                     console.log('Welcome!  Fetching your information.... ');
                     FB.api('/me', function (response) {
-                        document.getElementById("text").innerText = 'Good to see you, ' + response.name + '.';
+                        console.log('Good to see you, ' + response.name + '.');
                     });
                 } else {
                     console.log('User cancelled login or did not fully authorize.');
@@ -50,9 +50,9 @@
             FB.getLoginStatus(function (response) {
                 console.log('status:' + response.status);
                 if (response.status === "connected") {
-                    document.getElementById("text").innerText = "facebook 已登录；accesstoken: " + response.authResponse.accessToken;
+                    console.log("facebook 已登录；accesstoken: " + response.authResponse.accessToken);
                 } else {
-                    document.getElementById("text").innerText = "facebook 暂未登录";
+                    console.log("facebook 暂未登录");
                 }
                 //            console.log('status:'+response.authResponse.accessToken);
                 //statusChangeCallback(response);
