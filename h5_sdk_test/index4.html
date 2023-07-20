@@ -14,16 +14,20 @@
         callback: handleCredentialResponse
       });
 
-       var client;
-      function googleInit2({
-        client = google.accounts.oauth2.initCodeClient({
-          client_id: '550948425386-0dm4gski8f5evdgvts3klgpp54n07h5s.apps.googleusercontent.com'
-          scope: "https://www.googleapis.com/auth/userinfo.profile'
-          ux_mode: popup',
-          redirect_uri: "https://xuououl.github.io",
-          callback: handleCredentialResponse,
-          state: "clm"
-        });
+      var client;
+      function googleInit2() {
+          client = google.accounts.oauth2.initCodeClient({
+              client_id: '550948425386-0dm4gski8f5evdgvts3klgpp54n07h5s.apps.googleusercontent.com',
+              scope: "https://www.googleapis.com/auth/userinfo.profile",
+              ux_mode: 'popup',
+              redirect_uri: "https://xuououl.github.io",
+              callback: handleCredentialResponse,
+              state: "clm"
+          });
+      }
+
+      function login2(){ 
+        client.reguestCode();
       }
     }
     </script>
@@ -31,5 +35,9 @@
 
     <pre>One Tap renders a popup, button requires a div to position it on the page</pre>
     <div id='buttonDiv'></div>
+    <div>
+      <button type="button" onclick="googleInit2()">google -键录222</button>
+      <button type="button" onclick="login2()">google 调界面222</button>
+    </div>
   </body>
 </html>
