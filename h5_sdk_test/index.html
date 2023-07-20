@@ -14,30 +14,34 @@
                 ux_mode: 'popup',
             });
 
+            var signInButton = document.getElementById('google-signin-button');
+            signInButton.addEventListener('click', handleSignIn);
+        }
+
+        function handleSignIn() {
             google.accounts.id.prompt(notification => {
-                if (notification.isNotDisplayed()) {
-                    handleSignIn();
+                if (notification.isDisplayed()) {
+                    notification.finish();
+                } else {
+                    console.error('无法显示登录弹窗，请重试！');
                 }
             });
         }
 
-        function handleSignIn() {
-            if (google.accounts.id.isSignedIn()) {
-                var credential = google.accounts.id.getCredential();
-                var idToken = credential.id_token;
-                
-                // 发送 idToken 给后端进行验证和授权登录操作
-                // ...
-                
-                console.log('授权登录成功！');
-                console.log('ID Token: ' + idToken);
-            } else {
-                console.error('授权登录失败，请重试！');
-            }
+        // 登录成功后的回调函数
+        function handleLoginSuccess(response) {
+            var credential = response.credential;
+            var idToken = credential.id_token;
+            
+            // 发送 idToken 给后端进行验证和授权登录操作
+            // ...
+            
+            console.log('授权登录成功！');
+            console.log('ID Token: ' + idToken);
         }
     </script>
 </head>
 <body>
-    <button onclick="handleSignIn()">使用 Google 登录</button>
+    <button id="google-signin-button">使用 Google 登录</button>
 </body>
 </html>
