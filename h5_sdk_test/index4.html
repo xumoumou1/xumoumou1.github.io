@@ -1,6 +1,8 @@
 <html>
   <body>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <button id="custom-login-button">点击登录</button>
     <script>
     function handleCredentialResponse() {
       console.log('hello, world');
@@ -13,12 +15,17 @@
       });
       
       // Display the One Tap prompt
-      google.accounts.id.prompt();
+      // google.accounts.id.prompt();
       
       // Display the Sign In With Google Button
-      google.accounts.id.renderButton(
-        document.getElementById("buttonDiv"),
-        { theme: 'outline', size: 'large' }
+      // google.accounts.id.renderButton(
+        // document.getElementById("buttonDiv"),
+        // { theme: 'outline', size: 'large' }
+
+      var customLoginButton = document.getElementById('custom-login-button');
+      customLoginButton.addEventListener('click', function() {
+        google.accounts.id.prompt();
+      });
       );
     }
     </script>
