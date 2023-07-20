@@ -1,35 +1,158 @@
 <html>
   <body>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-
-    <button id="custom-login-button">点击登录</button>
+   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async></script>
     <script>
-    function handleCredentialResponse() {
-      console.log('hello, world');
-    }
-     var client;
-      function googleInit2() {
-          client = google.accounts.oauth2.initCodeClient({
-              client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
-              scope: "https://www.googleapis.com/auth/userinfo.profile",
-              ux_mode: 'popup',
-              redirect_uri: "https://xumoumou1.github.io",
-              callback: handleCredentialResponse,
-              state: "clm"
-          });
-      }
 
-      function login2(){ 
-        client.requestCode();
-      }
+        var isFBSuc = false;
+
+        function facebookinit() {
+            FB.init({
+                appId: '940773713487256',
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v17.0'
+            });
+            isFBSuc = true;
+        }
+
+        function facebookLogin() {
+
+            if (!isFBSuc) {
+                document.getElementById("text").innerText = "facebook 没有初始化";
+                return;
+            }
+
+            FB.login(function (response) {
+                console.log('response:' + response.toString());
+                console.log('status:' + response.status);
+                //            console.log('status:'+response.authResponse.accessToken);
+                //            console.log('status:'+response.authResponse.userID);
+                //console.log('status:'+response.status);
+                if (response.authResponse) {
+                    console.log('Welcome!  Fetching your information.... ');
+                    FB.api('/me', function (response) {
+                        document.getElementById("text").innerText = 'Good to see you, ' + response.name + '.';
+                    });
+                } else {
+                    console.log('User cancelled login or did not fully authorize.');
+                }
+            }, { scope: 'public_profile,email' });
+        }
+
+        function facebookLoout() {
+            FB.logout(function (response) {
+                // Person is now logged out
+            });
+        }
+
+        function getState() {
+            FB.getLoginStatus(function (response) {
+                console.log('status:' + response.status);
+                if (response.status === "connected") {
+                    document.getElementById("text").innerText = "facebook 已登录；accesstoken: " + response.authResponse.accessToken;
+                } else {
+                    document.getElementById("text").innerText = "facebook 暂未登录";
+                }
+                //            console.log('status:'+response.authResponse.accessToken);
+                //statusChangeCallback(response);
+            })
+        }
+
+        function handleCredentialResponse(response) {
+            //var idToken = response.getAuthResponse().id_token;
+            console.log("ID: " + "aaaaaaaaaaaaaaaaaaaaaaaaa" + response.toString());
+
+
+            console.log("ID: " + response.access_token);
+            //        const responsePayload = decodeJWT(response.credential);
+            //        console.log('头部:', responsePayload.header);
+            //        console.log('负载:', responsePayload.payload);
+            //        document.getElementById("text").innerText ='Google登录:'+responsePayload.payload.name;
+            //        console.log("ID: " + responsePayload.sub);
+            //        console.log('Full Name: ' + responsePayload.name);
+            //        console.log('Given Name: ' + responsePayload.given_name);
+            //        console.log('Family Name: ' + responsePayload.family_name);
+            //        console.log("Image URL: " + responsePayload.picture);
+            //        console.log("Email: " + responsePayload.email);
+
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://www.googleapis.com/oauth2/v1/userinfo?access_token=' + response.access_token);
+            //        xhr.open('GET', "https://www.googleapis.com/oauth2/v1/userinfo", true);
+            //        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            // Set custom header for CRSF
+            //        xhr.setRequestHeader('X-Requested-With', 'XmlHttpRequest');
+            xhr.onreadystatechange = function () {
+                debugger
+                if (xhr.readyState === 4 && xhr.status === 200) {  //固定写法
+                    //数据获取成功，获取服务器响应的数据
+                    console.log(xhr.responseText)
+                }
+            }
+            xhr.send();
+        }
+
+
+
+
+        function decodeJWT(jwt) {
+            // 将 JWT 的有效载荷部分分割为头部、负载和签名
+            var parts = jwt.split('.');
+            var header = parts[0];
+            var payload = parts[1];
+            var signature = parts[2];
+
+            // 解码头部和负载
+            var decodedHeader = JSON.parse(atob(header));
+            var decodedPayload = JSON.parse(atob(payload));
+
+            // 返回解码后的头部和负载
+            return {
+                header: decodedHeader,
+                payload: decodedPayload
+            };
+        }
+
+        var client;
+        function googleInit2() {
+            //         client = google.accounts.oauth2.initCodeClient({
+            //            client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
+            //            scope: 'https://www.googleapis.com/auth/userinfo.profile',
+            //            ux_mode: 'popup',
+            //            redirect_uri: "https://localhost:8443",
+            //            callback: handleCredentialResponse,
+            //            state: "profile"
+            //        });
+
+            client = google.accounts.oauth2.initTokenClient({
+                client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
+                scope: 'email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid',
+                callback: handleCredentialResponse
+            });
+        }
+
+        function login2() {
+            // client.requestCode();
+            //        client.getToken("1111");
+            client.requestAccessToken()
+            // 使用授权码交换令牌
+            // 使用授权码交换令牌
+
+        }
+
     </script>
 
+    <button type="button" onclick="facebookinit()">facebook初始化</button>
+    <button type="button" onclick="getState()">facebook获取状态</button>
+    <button type="button" onclick="facebookLogin()">facebook登录</button>
+    <button type="button" onclick="facebookLoout()">facebook登出</button>
 
-    <pre>One Tap renders a popup, button requires a div to position it on the page</pre>
-    <div id='buttonDiv'></div>
+
     <div>
-      <button type="button" onclick="googleInit2()">google -键录222</button>
-      <button type="button" onclick="login2()">google 调界面222</button>
+
+        <button type="button" onclick="googleInit2()">google 一键登录222</button>
+        <button type="button" onclick="login2()">google 调界面222</button>
     </div>
   </body>
 </html>
