@@ -149,7 +149,7 @@ window.__require = function e(t, n, r) {
             callback: (response)=> {
             self.handleCredentialResponse(response);
             },
-            error callback:(error)=>{
+            error_callback:(error)=>{
                 
                   let node = new cc.Node();
                   node.color = cc.Color.RED;
