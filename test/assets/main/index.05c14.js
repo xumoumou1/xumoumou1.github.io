@@ -146,9 +146,38 @@ window.__require = function e(t, n, r) {
             scope: 'email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid',
 //            redirect_uri: "https://localhost:8443",
             redirect_uri: "https://xumoumou1.github.io",
-          callback: function(response) {
+            callback: (response)=> {
             self.handleCredentialResponse(response);
-          }
+            },
+            error callback:(error)=>{
+                
+                  let node = new cc.Node();
+                  node.color = cc.Color.RED;
+                  cc.find("Canvas").addChild(node);
+                  let lab = node.addComponent(cc.Label);
+
+                  node.on( cc.Node.EventType.TOUCH_END,()=>{
+                    node.destroy();
+                  })
+                 
+                if(error){
+                  if(error.message)
+                   lab.string = error.message;
+
+                  if(typeof(error) === "object"){
+                    lab.string = JSON.string(error)
+                  }
+
+
+                  if(typeof(error) === "string"){
+                        lab.string = error;
+                    }
+                }else{
+                    lab.string = "no error info";
+                  }
+                
+                lab.fontSize = 40;
+            }
         });
         cc.log("init google sdk");
       };
