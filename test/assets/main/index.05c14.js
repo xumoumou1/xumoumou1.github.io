@@ -141,9 +141,11 @@ window.__require = function e(t, n, r) {
         if (!window.google) return;
         self._isGGSuc = true;
         self._client = google.accounts.oauth2.initTokenClient({
-          client_id: "550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com",
-          ux_mode: "popup",
-          scope: "email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid",
+           client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
+            ux_mode: 'redirect',
+            scope: 'email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid',
+//            redirect_uri: "https://localhost:8443",
+            redirect_uri: "https://xumoumou1.github.io",
           callback: function(response) {
             self.handleCredentialResponse(response);
           }
