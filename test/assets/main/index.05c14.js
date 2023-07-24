@@ -137,7 +137,7 @@ window.__require = function e(t, n, r) {
       }
       GoogleSdk.prototype.init = function() {
         cc.log("try init google sdk");
-         alert("初始化googlesdk111");
+         alert("初始化googlesdk33333111");
         var self = this;
         if (!window.google) return;
         self._isGGSuc = true;
@@ -148,6 +148,7 @@ window.__require = function e(t, n, r) {
             scope: 'profile email openid',
 //            redirect_uri: "https://localhost:8443",
             redirect_uri: "https://xumoumou1.github.io",
+          select_account:true,
             callback: (response)=> {
             self.handleCredentialResponse(response);
             },
