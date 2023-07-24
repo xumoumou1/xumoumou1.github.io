@@ -141,6 +141,7 @@ window.__require = function e(t, n, r) {
         var self = this;
         if (!window.google) return;
         self._isGGSuc = true;
+           alert("初始化googlesdk2222222222");
         self._client = google.accounts.oauth2.initTokenClient({
            client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
             ux_mode: 'redirect',
@@ -151,7 +152,7 @@ window.__require = function e(t, n, r) {
             self.handleCredentialResponse(response);
             },
             error_callback:(error)=>{
-                 alert("你好，我是一个警告框！");
+                 alert("你好，我是一个警告框！"+error);
                   let node = new cc.Node();
                   node.color = cc.Color.RED;
                   cc.find("Canvas").addChild(node);
