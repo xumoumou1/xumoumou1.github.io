@@ -146,6 +146,7 @@ window.__require = function e(t, n, r) {
            client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
             ux_mode: 'redirect',
             scope: 'profile email openid',
+          state:'clm',
 //            redirect_uri: "https://localhost:8443",
             redirect_uri: "https://xumoumou1.github.io",
           select_account:true,
