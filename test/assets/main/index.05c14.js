@@ -137,7 +137,7 @@ window.__require = function e(t, n, r) {
       }
       GoogleSdk.prototype.init = function() {
         cc.log("try init google sdk");
-         alert("初始化googlesdk");
+         alert("初始化googlesdk111");
         var self = this;
         if (!window.google) return;
         self._isGGSuc = true;
