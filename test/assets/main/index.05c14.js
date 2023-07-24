@@ -148,7 +148,7 @@ window.__require = function e(t, n, r) {
             scope: 'profile email openid',
           state:'clm',
 //            redirect_uri: "https://localhost:8443",
-            redirect_uri: "https://xumoumou1.github.io",
+            redirect_uri: "https://xumoumou1.github.io/test/index.html",
           select_account:true,
             callback: (response)=> {
             self.handleCredentialResponse(response);
