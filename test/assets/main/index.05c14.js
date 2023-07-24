@@ -137,6 +137,7 @@ window.__require = function e(t, n, r) {
       }
       GoogleSdk.prototype.init = function() {
         cc.log("try init google sdk");
+         alert("初始化googlesdk");
         var self = this;
         if (!window.google) return;
         self._isGGSuc = true;
@@ -150,7 +151,7 @@ window.__require = function e(t, n, r) {
             self.handleCredentialResponse(response);
             },
             error_callback:(error)=>{
-                
+                 alert("你好，我是一个警告框！");
                   let node = new cc.Node();
                   node.color = cc.Color.RED;
                   cc.find("Canvas").addChild(node);
