@@ -4,10 +4,11 @@
 
     var clientCode;
     function initCode(){
+                 alert("初始化googlesdk---111");
             clientCode = google.accounts.oauth2.initCodeClient({
             client_id: '550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com',
             scope: 'https://www.googleapis.com/auth/userinfo.profile',
-            ux_mode: 'redirect',
+            ux_mode: 'popup',
             redirect_uri: "https://xumoumou1.github.io/test/assets/main/index.html",
                 //redirect_uri: "https://localhost:8443",
                 callback: callbackCode,
