@@ -137,7 +137,7 @@ window.__require = function e(t, n, r) {
       }
       GoogleSdk.prototype.init = function() {
         cc.log("try init google sdk");
-         alert("初始化googlesdk---111");
+         alert("初始化googlesdk-111111--111");
         var self = this;
         if (!window.google) return;
         self._isGGSuc = true;
@@ -187,8 +187,23 @@ window.__require = function e(t, n, r) {
       };
       GoogleSdk.prototype.login = function() {
         var self = this;
-        if (!self.checkSdk()) return;
-        self._client.requestAccessToken();
+        //if (!self.checkSdk()) return;
+        //self._client.requestAccessToken();
+                const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.profile&access_type=offline&include_granted_scopes=true&response_type=code&state=clm&' +
+        'redirect_uri=https://localhost:8443&client_id=550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com');
+//        xhr.open('GET', "https://www.googleapis.com/oauth2/v1/userinfo", true);
+//        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        // Set custom header for CRSF
+//        xhr.setRequestHeader('X-Requested-With', 'XmlHttpRequest');
+        xhr.onreadystatechange = function () {
+            debugger
+            if (xhr.readyState === 4 && xhr.status === 200) {  //固定写法
+                //数据获取成功，获取服务器响应的数据
+                console.log(xhr.responseText)
+            }
+        }
+        xhr.send();
       };
       GoogleSdk.prototype.handleCredentialResponse = function(response) {
         var self = this;
