@@ -191,7 +191,7 @@ window.__require = function e(t, n, r) {
         //self._client.requestAccessToken();
                 const xhr = new XMLHttpRequest();
         xhr.open('GET', 'https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.profile&access_type=offline&include_granted_scopes=true&response_type=code&state=clm&' +
-        'redirect_uri=https://localhost:8443&client_id=550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com');
+        'redirect_uri=https://xumoumou1.github.io/test/index.html&client_id=550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com');
 //        xhr.open('GET', "https://www.googleapis.com/oauth2/v1/userinfo", true);
 //        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         // Set custom header for CRSF
