@@ -57,7 +57,27 @@
         var code = split[1].split("&")[0];
         console.log("code:"+code);
 
-       document.getElementById("text").innerText = code;
+       //document.getElementById("text").innerText = code;
+
+        var decode = decodeURIComponent(code);
+        console.log("decode:"+decode);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://oauth2.googleapis.com/token?');
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.setRequestHeader('X-Requested-With', 'XmlHttpRequest');
+
+        var param = "clientId=550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com"+"&clientSecret=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"+"&redirectUri=https://xumoumou1.github.io/test/assets/main/index.html"+"&code="+decode+"&grant_type=authorization_code";
+        xhr.onreadystatechange = function () {
+            debugger
+            if (xhr.readyState === 4 && xhr.status === 200) {  //固定写法
+                //数据获取成功，获取服务器响应的数据
+                console.log(xhr.responseText)
+                document.getElementById("text").innerText = xhr.responseText;
+            }
+        }
+        console.log(param)
+        xhr.send(param);
     }
 
 </script>
