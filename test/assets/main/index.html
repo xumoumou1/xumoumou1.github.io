@@ -126,7 +126,7 @@
 
         var param = "clientId=550948425386-0dm4gski8f5evdgvts3klqpp54n07h5s.apps.googleusercontent.com"+"&clientSecret=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"+"&redirectUri=https://xumoumou1.github.io/test/assets/main/index.html"+"&code="+decode+"&grant_type=authorization_code";
         xhr.onreadystatechange = function () {
-            debugger
+       
             if (xhr.readyState === 4 && xhr.status === 200) {  //固定写法
                 //数据获取成功，获取服务器响应的数据
                 console.log(xhr.responseText)
