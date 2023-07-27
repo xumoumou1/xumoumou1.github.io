@@ -16,7 +16,7 @@
         });
         FB.AppEvents.logPageView();   
         isFBSuc = true;
-        alert("初始化FACE sdk---dialog1111");
+        alert("初始化FACE sdk---async1111");
     }
 
     function facebookLogin(){
@@ -40,7 +40,7 @@
             } else {
                 console.log('User cancelled login or did not fully authorize.');
             }
-        }, {scope: 'public_profile,email', display: 'dialog',redirect_uri: 'https://xumoumou1.github.io/test/assets/main/index.html'});
+        }, {scope: 'public_profile,email', display: 'async',redirect_uri: 'https://xumoumou1.github.io/test/assets/main/index.html'});
     }
 
     function facebookLoout(){
