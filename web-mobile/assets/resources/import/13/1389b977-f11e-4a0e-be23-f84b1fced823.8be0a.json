@@ -1,0 +1,51 @@
+[
+  1,
+  [
+    "640/9GvchJo7FypA+8bH+R"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "rankBox01",
+      "rect": [
+        0,
+        0,
+        116,
+        115
+      ],
+      "offset": [
+        0,
+        0.5
+      ],
+      "originalSize": [
+        116,
+        116
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

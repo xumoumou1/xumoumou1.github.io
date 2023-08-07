@@ -1,0 +1,86 @@
+{
+    "paths": {},
+    "uuids": [
+        "29FYIk+N1GYaeWH/q1NxQO",
+        "31vIlawANFZqnzLlSuHBfc",
+        "41D7kWhyFGY7q4NDlzkazn",
+        "60WvkXsKxPdZwzGdxeBjmK",
+        "675ovJ2tVK2aLYfgPUWOMv",
+        "6aoKpq6+5BVaCIpoemqt7E",
+        "71VhFCTINJM6/Ky3oX9nBT",
+        "8855/VlrRKd6H0MSRnFxAU",
+        "99FwsL0hBG8bITfZ4/IwmK",
+        "a8Anh32NZGRZegUtSgEj26",
+        "b38Twbp6tNNLZFTHSsEWOJ",
+        "b4P/PCArtIdIH38t6mlw8Y",
+        "cf73jxyN9Jt47QTJU6ziYh",
+        "e8Ueib+qJEhL6mXAHdnwbi",
+        "e97GVMl6JHh5Ml5qEDdSGa",
+        "ecpdLyjvZBwrvm+cedCcQy",
+        "f0BIwQ8D5Ml7nTNQbh1YlS"
+    ],
+    "scenes": {
+        "db://assets/Scene/helloworld.fire": "60WvkXsKxPdZwzGdxeBjmK",
+        "db://assets/Scene/tilemaptest.fire": "b38Twbp6tNNLZFTHSsEWOJ"
+    },
+    "redirect": [
+        "ecpdLyjvZBwrvm+cedCcQy",
+        0
+    ],
+    "deps": [
+        "internal"
+    ],
+    "packs": {
+        "062cb7683": [
+            "6aoKpq6+5BVaCIpoemqt7E",
+            "71VhFCTINJM6/Ky3oX9nBT",
+            "99FwsL0hBG8bITfZ4/IwmK",
+            "a8Anh32NZGRZegUtSgEj26",
+            "b4P/PCArtIdIH38t6mlw8Y",
+            "cf73jxyN9Jt47QTJU6ziYh",
+            "e8Ueib+qJEhL6mXAHdnwbi"
+        ],
+        "0e3aae11f": [
+            "29FYIk+N1GYaeWH/q1NxQO",
+            "31vIlawANFZqnzLlSuHBfc",
+            "41D7kWhyFGY7q4NDlzkazn",
+            "60WvkXsKxPdZwzGdxeBjmK",
+            "675ovJ2tVK2aLYfgPUWOMv",
+            "8855/VlrRKd6H0MSRnFxAU",
+            "e97GVMl6JHh5Ml5qEDdSGa",
+            "f0BIwQ8D5Ml7nTNQbh1YlS"
+        ]
+    },
+    "name": "main",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": true,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            "062cb7683",
+            "4e05e",
+            "0e3aae11f",
+            "05d71",
+            "b38Twbp6tNNLZFTHSsEWOJ",
+            "1f4e2"
+        ],
+        "native": [
+            "6aoKpq6+5BVaCIpoemqt7E",
+            "55ea4",
+            "71VhFCTINJM6/Ky3oX9nBT",
+            "c06a9",
+            "99FwsL0hBG8bITfZ4/IwmK",
+            "d1118",
+            "a8Anh32NZGRZegUtSgEj26",
+            "cea68",
+            "b4P/PCArtIdIH38t6mlw8Y",
+            "83fcc",
+            "cf73jxyN9Jt47QTJU6ziYh",
+            "a4b59",
+            "e8Ueib+qJEhL6mXAHdnwbi",
+            "90cf4"
+        ]
+    }
+}
