@@ -1,0 +1,304 @@
+[
+  1,
+  [
+    "16a6ea2a0",
+    "13ibl38R5KDr4j+Esfztgj",
+    "70Esqwz1JJ86I5lkjKhGUB",
+    "d8DF6In0xAiJJdhThKr/Be",
+    "32AMp8fhpJz5kVEeuwoUwF",
+    "aaXWosVYlKM4V50097bl8S"
+  ],
+  [
+    "_textureSetter",
+    "rankBox01",
+    "rankBox02",
+    "rankImgLine",
+    "rankIconArrow",
+    "rankBoxNumber"
+  ],
+  [
+    "cc.SpriteFrame",
+    "cc.Texture2D",
+    [
+      "cc.SpriteAtlas",
+      [
+        "_spriteFrames"
+      ],
+      3,
+      11
+    ]
+  ],
+  [
+    [
+      2,
+      0,
+      1
+    ]
+  ],
+  [
+    [
+      [
+        {
+          "name": "rankBox01",
+          "rect": [
+            3,
+            3,
+            116,
+            115
+          ],
+          "offset": [
+            0,
+            0.5
+          ],
+          "originalSize": [
+            116,
+            116
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    [
+      [
+        "0,9729,9729,33071,33071,0,0,0",
+        -1
+      ],
+      [
+        1
+      ],
+      0,
+      [],
+      [],
+      []
+    ],
+    [
+      [
+        {
+          "name": "rankIconArrow",
+          "rect": [
+            20,
+            245,
+            92,
+            99
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            92,
+            99
+          ],
+          "rotated": 1,
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    [
+      [
+        {
+          "name": "rankBox02",
+          "rect": [
+            3,
+            124,
+            116,
+            115
+          ],
+          "offset": [
+            0,
+            0.5
+          ],
+          "originalSize": [
+            116,
+            116
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    [
+      [
+        {
+          "name": "rankBoxNumber",
+          "rect": [
+            20,
+            343,
+            203,
+            53
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            203,
+            53
+          ],
+          "rotated": 1,
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    [
+      [
+        [
+          0,
+          [
+            {},
+            "rankBox01",
+            6,
+            0,
+            "rankBox02",
+            6,
+            1,
+            "rankImgLine",
+            6,
+            2,
+            "rankIconArrow",
+            6,
+            3,
+            "rankBoxNumber",
+            6,
+            4
+          ]
+        ]
+      ],
+      0,
+      0,
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    ],
+    [
+      [
+        {
+          "name": "rankImgLine",
+          "rect": [
+            3,
+            245,
+            584,
+            11
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            584,
+            11
+          ],
+          "rotated": 1,
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ]
+  ]
+]

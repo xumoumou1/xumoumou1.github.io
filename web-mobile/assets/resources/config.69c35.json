@@ -1,0 +1,72 @@
+{
+    "paths": {
+        "cf2S56pFZIErXd2B+PStWj": [
+            "AutoAtlas",
+            "cc.SpriteAtlas"
+        ],
+        "13ibl38R5KDr4j+Esfztgj": [
+            "rankBox01",
+            "cc.SpriteFrame",
+            1
+        ],
+        "70Esqwz1JJ86I5lkjKhGUB": [
+            "rankBox02",
+            "cc.SpriteFrame",
+            1
+        ],
+        "aaXWosVYlKM4V50097bl8S": [
+            "rankBoxNumber",
+            "cc.SpriteFrame",
+            1
+        ],
+        "32AMp8fhpJz5kVEeuwoUwF": [
+            "rankIconArrow",
+            "cc.SpriteFrame",
+            1
+        ],
+        "d8DF6In0xAiJJdhThKr/Be": [
+            "rankImgLine",
+            "cc.SpriteFrame",
+            1
+        ]
+    },
+    "uuids": [
+        "13ibl38R5KDr4j+Esfztgj",
+        "16a6ea2a0",
+        "32AMp8fhpJz5kVEeuwoUwF",
+        "70Esqwz1JJ86I5lkjKhGUB",
+        "aaXWosVYlKM4V50097bl8S",
+        "cf2S56pFZIErXd2B+PStWj",
+        "d8DF6In0xAiJJdhThKr/Be"
+    ],
+    "scenes": {},
+    "redirect": [],
+    "deps": [],
+    "packs": {
+        "0c2cfa651": [
+            "13ibl38R5KDr4j+Esfztgj",
+            "16a6ea2a0",
+            "32AMp8fhpJz5kVEeuwoUwF",
+            "70Esqwz1JJ86I5lkjKhGUB",
+            "aaXWosVYlKM4V50097bl8S",
+            "cf2S56pFZIErXd2B+PStWj",
+            "d8DF6In0xAiJJdhThKr/Be"
+        ]
+    },
+    "name": "resources",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": true,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            "0c2cfa651",
+            "51d2e"
+        ],
+        "native": [
+            "16a6ea2a0",
+            "6ff78"
+        ]
+    }
+}
