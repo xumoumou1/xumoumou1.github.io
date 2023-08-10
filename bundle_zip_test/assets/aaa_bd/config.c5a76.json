@@ -1,0 +1,52 @@
+{
+    "paths": {
+        "89ljkztxJMKpEppyQe/B12": [
+            "HelloWorld",
+            "cc.Texture2D"
+        ],
+        "c2OARv4TxBGJdGO6zDm7An": [
+            "HelloWorld",
+            "cc.SpriteFrame",
+            1
+        ]
+    },
+    "uuids": [
+        "89ljkztxJMKpEppyQe/B12",
+        "b2V6Js0LNBGI5eunZlfxBJ",
+        "c2OARv4TxBGJdGO6zDm7An",
+        "ecpdLyjvZBwrvm+cedCcQy"
+    ],
+    "scenes": {
+        "db://assets/aaa_bd/aaa_bd.fire": "b2V6Js0LNBGI5eunZlfxBJ"
+    },
+    "redirect": [
+        "ecpdLyjvZBwrvm+cedCcQy",
+        0
+    ],
+    "deps": [
+        "internal"
+    ],
+    "packs": {
+        "028bb9514": [
+            "89ljkztxJMKpEppyQe/B12",
+            "b2V6Js0LNBGI5eunZlfxBJ",
+            "c2OARv4TxBGJdGO6zDm7An"
+        ]
+    },
+    "name": "aaa_bd",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": true,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            "028bb9514",
+            "7494c"
+        ],
+        "native": [
+            "89ljkztxJMKpEppyQe/B12",
+            "55ea4"
+        ]
+    }
+}

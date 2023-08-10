@@ -1,0 +1,85 @@
+{
+    "paths": {
+        "13lNUOucJN/68thABYaTFn": [
+            "AutoAtlas",
+            "cc.SpriteAtlas"
+        ],
+        "baywDks55I+I+DeWGrQ1A9": [
+            "Texture/icon114",
+            "cc.SpriteFrame",
+            1
+        ],
+        "4f1H2mfRxG4rMwbnuv4wRt": [
+            "Texture/icon144",
+            "cc.SpriteFrame",
+            1
+        ],
+        "03vgDNsu5KPrSKiJr5cJJi": [
+            "Texture/icon57",
+            "cc.SpriteFrame",
+            1
+        ],
+        "f97HRRuzpNjLWR/onzYsRM": [
+            "Texture/icon72",
+            "cc.SpriteFrame",
+            1
+        ]
+    },
+    "uuids": [
+        "03vgDNsu5KPrSKiJr5cJJi",
+        "13lNUOucJN/68thABYaTFn",
+        "1420543cb",
+        "29FYIk+N1GYaeWH/q1NxQO",
+        "4f1H2mfRxG4rMwbnuv4wRt",
+        "baywDks55I+I+DeWGrQ1A9",
+        "d8evS+7wBHtI+EI/Uinfpf",
+        "e97GVMl6JHh5Ml5qEDdSGa",
+        "ecpdLyjvZBwrvm+cedCcQy",
+        "f0BIwQ8D5Ml7nTNQbh1YlS",
+        "f97HRRuzpNjLWR/onzYsRM"
+    ],
+    "scenes": {
+        "db://assets/TestManual/test-manual.fire": "d8evS+7wBHtI+EI/Uinfpf"
+    },
+    "redirect": [
+        "29FYIk+N1GYaeWH/q1NxQO",
+        0,
+        "e97GVMl6JHh5Ml5qEDdSGa",
+        0,
+        "ecpdLyjvZBwrvm+cedCcQy",
+        1,
+        "f0BIwQ8D5Ml7nTNQbh1YlS",
+        0
+    ],
+    "deps": [
+        "main",
+        "internal"
+    ],
+    "packs": {
+        "0d88c1a10": [
+            "03vgDNsu5KPrSKiJr5cJJi",
+            "13lNUOucJN/68thABYaTFn",
+            "1420543cb",
+            "4f1H2mfRxG4rMwbnuv4wRt",
+            "baywDks55I+I+DeWGrQ1A9",
+            "d8evS+7wBHtI+EI/Uinfpf",
+            "f97HRRuzpNjLWR/onzYsRM"
+        ]
+    },
+    "name": "TestManual",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": true,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            "0d88c1a10",
+            "79e95"
+        ],
+        "native": [
+            "1420543cb",
+            "e48c1"
+        ]
+    }
+}

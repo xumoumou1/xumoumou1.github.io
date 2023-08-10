@@ -1,0 +1,110 @@
+{
+    "paths": {
+        "0e4UmZL6dO/ZocFuv8dj6G": [
+            "Texture/icon114",
+            "cc.Texture2D"
+        ],
+        "3dVrMHJ4FOrKdiobxDM3N3": [
+            "Texture/icon114",
+            "cc.SpriteFrame",
+            1
+        ],
+        "65PHz8TrNDs6cNsPbTgmjZ": [
+            "Texture/icon144",
+            "cc.Texture2D"
+        ],
+        "67o3rTiYlHRqsYo+ZkPfhF": [
+            "Texture/icon144",
+            "cc.SpriteFrame",
+            1
+        ],
+        "d4I1lCduNAhoxvfbis8ix+": [
+            "Texture/icon57",
+            "cc.SpriteFrame",
+            1
+        ],
+        "ddnchdFxxOIZnIrH+5qYSE": [
+            "Texture/icon57",
+            "cc.Texture2D"
+        ],
+        "a2KvrgmF9OeJh4mCSf/CHM": [
+            "Texture/icon72",
+            "cc.SpriteFrame",
+            1
+        ],
+        "ebhwK7Fw9O/644o28L8IEw": [
+            "Texture/icon72",
+            "cc.Texture2D"
+        ]
+    },
+    "uuids": [
+        "0e4UmZL6dO/ZocFuv8dj6G",
+        "29FYIk+N1GYaeWH/q1NxQO",
+        "2dL3kvpAxJu6GJ7RdqJG5J",
+        "3dVrMHJ4FOrKdiobxDM3N3",
+        "41D7kWhyFGY7q4NDlzkazn",
+        "65PHz8TrNDs6cNsPbTgmjZ",
+        "67o3rTiYlHRqsYo+ZkPfhF",
+        "a2KvrgmF9OeJh4mCSf/CHM",
+        "d4I1lCduNAhoxvfbis8ix+",
+        "ddnchdFxxOIZnIrH+5qYSE",
+        "e97GVMl6JHh5Ml5qEDdSGa",
+        "ebhwK7Fw9O/644o28L8IEw",
+        "ecpdLyjvZBwrvm+cedCcQy",
+        "f0BIwQ8D5Ml7nTNQbh1YlS"
+    ],
+    "scenes": {
+        "db://assets/Test/test.fire": "2dL3kvpAxJu6GJ7RdqJG5J"
+    },
+    "redirect": [
+        "29FYIk+N1GYaeWH/q1NxQO",
+        0,
+        "41D7kWhyFGY7q4NDlzkazn",
+        0,
+        "e97GVMl6JHh5Ml5qEDdSGa",
+        0,
+        "ecpdLyjvZBwrvm+cedCcQy",
+        1,
+        "f0BIwQ8D5Ml7nTNQbh1YlS",
+        0
+    ],
+    "deps": [
+        "main",
+        "internal"
+    ],
+    "packs": {
+        "0f98b4e0d": [
+            "0e4UmZL6dO/ZocFuv8dj6G",
+            "2dL3kvpAxJu6GJ7RdqJG5J",
+            "3dVrMHJ4FOrKdiobxDM3N3",
+            "65PHz8TrNDs6cNsPbTgmjZ",
+            "67o3rTiYlHRqsYo+ZkPfhF",
+            "a2KvrgmF9OeJh4mCSf/CHM",
+            "d4I1lCduNAhoxvfbis8ix+",
+            "ddnchdFxxOIZnIrH+5qYSE",
+            "ebhwK7Fw9O/644o28L8IEw"
+        ]
+    },
+    "name": "Test",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": true,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            "0f98b4e0d",
+            "a55ba"
+        ],
+        "native": [
+            "0e4UmZL6dO/ZocFuv8dj6G",
+            "5995c",
+            "65PHz8TrNDs6cNsPbTgmjZ",
+            "04620",
+            "ddnchdFxxOIZnIrH+5qYSE",
+            "f75b4",
+            "ebhwK7Fw9O/644o28L8IEw",
+            "4d88a"
+        ]
+    }
+}
