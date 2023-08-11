@@ -1,0 +1,31 @@
+{
+    "paths": {
+        "34SvEfY0FKlqeOkZs41WEs": [
+            "texture",
+            "cc.Asset"
+        ]
+    },
+    "uuids": [
+        "34SvEfY0FKlqeOkZs41WEs"
+    ],
+    "scenes": {},
+    "redirect": [],
+    "deps": [],
+    "packs": {},
+    "name": "resources",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": true,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            "34SvEfY0FKlqeOkZs41WEs",
+            "22d0c"
+        ],
+        "native": [
+            "34SvEfY0FKlqeOkZs41WEs",
+            "cf74b"
+        ]
+    }
+}
