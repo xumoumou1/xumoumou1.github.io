@@ -154,7 +154,7 @@ window.__require = function e(t, n, r) {
       }
       Test.prototype.onLoad = function() {
         var self = this;
-        LoadTool_1.default.downLoadBundle("bundle", function(bundle) {
+        LoadTool_1.default.downLoadBundle("bundle1", function(bundle) {
           bundle && (self._bundle = bundle);
         });
       };
