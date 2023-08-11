@@ -149,24 +149,25 @@ window.__require = function e(t, n, r) {
         _this._spriteFrameIndex = 0;
         _this._max = 7;
         _this._loadOver = false;
-        _this._bundle = null;
+        _this._bundle = "bundle1";
         return _this;
       }
       Test.prototype.onLoad = function() {
         var self = this;
-        LoadTool_1.default.downLoadBundle("bundle1", function(bundle) {
-          bundle && (self._bundle = bundle);
+        LoadTool_1.default.downLoadBundle(self._bundle, function(bundle) {
+          // bundle && (self._bundle = bundle);
+          // self._loadOver = true;
         });
       };
       Test.prototype.onClick = function() {
         var _this = this;
         var self = this;
-        if (!self._bundle) {
+        if (!cc.assetManager.getBundle(self._bundle)) {
           alert("bundle\u672a\u52a0\u8f7d\u5b8c\u6bd5  \u8bf7\u7b49\u5f85bundle\u52a0\u8f7d\u6210\u529f");
           return;
         }
         var index = this._spriteFrameIndex++ % this._max;
-        self._bundle.loadBundle("bundle1", function(err, bundle) {
+        cc.assetManager.loadBundle(self._bundle, function(err, bundle) {
           if (err) {
             cc.error(err);
             return;
