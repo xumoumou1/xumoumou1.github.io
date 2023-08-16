@@ -47,7 +47,7 @@ function cacheZip(t, e, n) {
 
 function BundleAsyncCacher(e, t, n) {
     this.rootRoute = e;
-    this.loadRoot = "/remoteAsset/";
+    this.loadRoot = "remoteAsset/";
     this.fetchOrigin = t || "";
     this.cachedBundles = new Map;
     this.cahcedCache = {};
