@@ -234,7 +234,7 @@ BundleAsyncCacher.prototype.onFetch = async function (n, e) {
         }
     }
     for (let [e, t] of this.cachedBundles) {
-        var s = n.url.indexOf(this.loadRoot + e + "/");
+        var s = n.url.indexOf(this.rootRoute + e + "/");
         var a = n.url;
         if (s >= 0) {
             if (this.fetchOrigin.length) {
